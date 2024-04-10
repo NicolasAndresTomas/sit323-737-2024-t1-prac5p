@@ -13,13 +13,13 @@ Docker Hub authentication was performed using the `docker login` command. This s
 
 ### Publishing the Docker Image
 The Docker image was tagged and pushed to Docker Hub successfully. The commands used were:
-docker tag myapp:latest 221351413/myapp:latest
-docker push 221351413/myapp:latest
+- docker tag myapp:latest 221351413/myapp:latest
+- docker push 221351413/myapp:latest
 
 ### Running the Microservice
 The microservice was launched locally using Docker with the following command:
-docker run -p 3000:3000 --name=my-microservice-instance 221351413/myapp:latest
-docker push 221351413/myapp:latest
+- docker run -p 3000:3000 --name=my-microservice-instance 221351413/myapp:latest
+- docker push 221351413/myapp:latest
 After execution, the service was accessible via http://localhost:3000.
 
 ## Accessing the Application
