@@ -1,24 +1,28 @@
 # Calculator Microservice
 
 ## Overview
+
 This project is a simple calculator microservice built with Node.js and Express. It supports basic arithmetic operations such as addition, subtraction, multiplication, division, square root, exponentiation, and modulo.
 
-## Steps:
+## Build and Run
 
-1. **Creating a Private Container Registry**: Due to permission constraints with Google Cloud, Docker Hub was chosen as an alternative for hosting the private container registry
+To build and run the application using Docker, follow these steps:
 
-2. **Authentication**: Used `docker login` to authenticate with Docker Hub, which is analogous to authenticating with Google Cloud's Artifact Registry
+1. Build the Docker image:
+   - docker build -t my-web-app .
+2. Run the Docker container:
+   - docker run -p 3000:3000 my-web-app
+3. Alternatively, use Docker Compose to build and run the service:
+   - docker-compose up
 
-3. **Building the Docker Image**: Constructed a Docker image of the microservice using the `Dockerfile` present in the repository and the command `docker build -t myapp:latest .`
+## Accessing the Application
 
-4. **Tagging the Docker Image**: Tagged the Docker image for pushing to Docker Hub using `docker tag myapp:latest 221351413/myapp:latest`
+After starting the service, access the application at [http://localhost:3000](http://localhost:3000).
 
-5. **Publishing the Image**: Successfully pushed the Docker image to Docker Hub with `docker push 221351413/myapp:latest`
-
-6. **Running the Microservice**: Launched the microservice locally using `docker run -p 3000:3000 --name my-microservice 221351413/myapp:latest` to ensure that it was working correctly. The microservice is now accessible at `http://localhost:3000`
-   
 ## Operations
+
 The service supports the following operations:
+
 - Addition: `/add?num1={number}&num2={number}`
 - Subtraction: `/subtract?num1={number}&num2={number}`
 - Multiplication: `/multiply?num1={number}&num2={number}`
