@@ -3,7 +3,7 @@
 ## Overview
 This project is a simple calculator microservice built with Node.js and Express. It supports basic arithmetic operations such as addition, subtraction, multiplication, division, square root, exponentiation, and modulo.
 
-### Steps:
+## Steps:
 
 1. **Creating a Private Container Registry**: Due to permission constraints with Google Cloud, Docker Hub was chosen as an alternative for hosting the private container registry.
 
