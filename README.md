@@ -3,26 +3,20 @@
 ## Overview
 This project is a simple calculator microservice built with Node.js and Express. It supports basic arithmetic operations such as addition, subtraction, multiplication, division, square root, exponentiation, and modulo.
 
-## Steps
+### Steps:
 
-### Creating a Private Container Registry
-Due to permission constraints with the Google Cloud Artifact Registry, Docker Hub was selected as an alternative solution to meet the project's requirement for a private container registry.
+1. **Creating a Private Container Registry**: Due to permission constraints with Google Cloud, Docker Hub was chosen as an alternative for hosting the private container registry.
 
-### Authentication
-Docker Hub authentication was performed using the `docker login` command. This step is crucial for pushing images to the registry and ensuring secure access.
+2. **Authentication**: Used `docker login` to authenticate with Docker Hub, which is analogous to authenticating with Google Cloud's Artifact Registry.
 
-### Publishing the Docker Image
-The Docker image was tagged and pushed to Docker Hub successfully. The commands used were:
-- docker tag myapp:latest 221351413/myapp:latest
-- docker push 221351413/myapp:latest
+3. **Building the Docker Image**: Constructed a Docker image of the microservice using the `Dockerfile` present in the repository and the command `docker build -t myapp:latest .`.
 
-### Running the Microservice
-The microservice was launched locally using Docker with the following command:
-- docker run -p 3000:3000 --name my-micro0 --name my-microservice 221351413/myapp:latest
+4. **Tagging the Docker Image**: Tagged the Docker image for pushing to Docker Hub using `docker tag myapp:latest 221351413/myapp:latest`.
 
-### Accessing the Application
-After execution, the service was accessible via [http://localhost:3000](http://localhost:3000).
+5. **Publishing the Image**: Successfully pushed the Docker image to Docker Hub with `docker push 221351413/myapp:latest`.
 
+6. **Running the Microservice**: Launched the microservice locally using `docker run -p 3000:3000 --name my-microservice 221351413/myapp:latest` to ensure that it was working correctly. The microservice is now accessible at `http://localhost:3000`.
+   
 ## Operations
 The service supports the following operations:
 - Addition: `/add?num1={number}&num2={number}`
