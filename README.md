@@ -18,12 +18,10 @@ The Docker image was tagged and pushed to Docker Hub successfully. The commands 
 
 ### Running the Microservice
 The microservice was launched locally using Docker with the following command:
-- docker run -p 3000:3000 --name=my-microservice-instance 221351413/myapp:latest
-- docker push 221351413/myapp:latest
-After execution, the service was accessible via http://localhost:3000.
+- docker run -p 3000:3000 --name my-micro0 --name my-microservice 221351413/myapp:latest
 
-## Accessing the Application
-After starting the service, access the application at [http://localhost:3000](http://localhost:3000).
+### Accessing the Application
+After execution, the service was accessible via [http://localhost:3000](http://localhost:3000).
 
 ## Operations
 The service supports the following operations:
