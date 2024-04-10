@@ -9,11 +9,13 @@ This project is a simple calculator microservice built with Node.js and Express.
 To build and run the application using Docker, follow these steps:
 
 1. Build the Docker image:
-   - docker build -t my-web-app .
+- docker build -t my-web-app .
+
 2. Run the Docker container:
-   - docker run -p 3000:3000 my-web-app
+- docker run -p 3000:3000 my-web-app
+
 3. Alternatively, use Docker Compose to build and run the service:
-   - docker-compose up
+- docker-compose up
 
 ## Accessing the Application
 
