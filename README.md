@@ -3,11 +3,24 @@
 ## Overview
 This project is a simple calculator microservice built with Node.js and Express. It supports basic arithmetic operations such as addition, subtraction, multiplication, division, square root, exponentiation, and modulo.
 
-## Build and Run
-To build and run the application using Docker, follow these steps:
-1. Build the Docker image: `docker build -t my-web-app .`
-2. Run the Docker container: `docker run -p 3000:3000 my-web-app`
-3. Alternatively, use Docker Compose to build and run the service: `docker-compose up`
+## Steps
+
+### Creating a Private Container Registry
+Due to permission constraints with the Google Cloud Artifact Registry, Docker Hub was selected as an alternative solution to meet the project's requirement for a private container registry.
+
+### Authentication
+Docker Hub authentication was performed using the `docker login` command. This step is crucial for pushing images to the registry and ensuring secure access.
+
+### Publishing the Docker Image
+The Docker image was tagged and pushed to Docker Hub successfully. The commands used were:
+docker tag myapp:latest 221351413/myapp:latest
+docker push 221351413/myapp:latest
+
+### Running the Microservice
+The microservice was launched locally using Docker with the following command:
+docker run -p 3000:3000 --name=my-microservice-instance 221351413/myapp:latest
+docker push 221351413/myapp:latest
+After execution, the service was accessible via http://localhost:3000.
 
 ## Accessing the Application
 After starting the service, access the application at [http://localhost:3000](http://localhost:3000).
